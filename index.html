@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wealth and Education Explorer</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Wealth and Education Explorer</h1>
+    <p class="subtitle">
+        Interactive scatter plot showing the relationship between wealth and education across countries.
+    </p>
+
+    <div class="controls">
+        <div class="control-group">
+            <label for="yearSlider">Year: <span id="yearValue">2015</span></label>
+            <input type="range" id="yearSlider" min="1999" max="2021" value="2015" step="1">
+        </div>
+
+        <div class="control-group">
+            <label for="metricSelect">Education indicator:</label>
+            <select id="metricSelect">
+                <option value="literacy">Adult literacy rate</option>
+                <option value="secondary_enrol">Secondary school enrolment</option>
+                <option value="gov_edu_exp">Government expenditure on education</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label>Regions:</label>
+            <div id="regionFilters" class="checkbox-group">
+                <label><input type="checkbox" value="Africa" checked> Africa</label>
+                <label><input type="checkbox" value="Asia/Pacific" checked> Asia/Pacific</label>
+                <label><input type="checkbox" value="Europe" checked> Europe</label>
+                <label><input type="checkbox" value="Americas" checked> Americas</label>
+                <label><input type="checkbox" value="Oceania" checked> Oceania</label>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="chart"></div>
+
+    <div class="notes">
+        <p><strong>Interaction:</strong> use the slider to change year, the dropdown to switch education measure, and hover over points to inspect country-level values.</p>
+    </div>
+</div>
+
+<div id="tooltip" class="tooltip"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
